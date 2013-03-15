@@ -1,3 +1,8 @@
+/**
+ * 
+ * Implement regular expression matching with support for '.' and '*'.
+ * 
+ */
 public class Solution {
     public boolean isMatch(String s, String p) {
          if(s.length() == 0){   
