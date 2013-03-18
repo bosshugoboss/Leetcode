@@ -1,3 +1,6 @@
+/**
+ *  Given a collection of numbers, return all possible permutations.
+ */
 public class Solution {
     public ArrayList<ArrayList<Integer>> permute(int[] num) {
          
