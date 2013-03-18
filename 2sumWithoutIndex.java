@@ -1,3 +1,6 @@
+/**
+ *  Typical 2 sum questions (not Leetcode)
+ */
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
            int remainder = 0;
