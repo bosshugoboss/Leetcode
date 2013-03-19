@@ -29,7 +29,7 @@ public class Solution {
              }
              prev = firstPointer;
              firstPointer = firstPointer.next;
-             if(firstPointer != null)
+             if(firstPointer != null) // easy to ignore!!!
              secondPointer = firstPointer.next;
          }
          return newHead;
