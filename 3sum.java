@@ -10,7 +10,7 @@ public class Solution {
            Arrays.sort(num);
            for(int index = 0; index < num.length; index ++){
                int remainder =  0 - num[index];
-               int leftPointer = 0;
+               int leftPointer = 0 + 1;
                int rightPointer = num.length - 1;
                while(leftPointer < rightPointer){
                    if(leftPointer == index){
