@@ -1,3 +1,7 @@
+/**
+ *  Given a digit string, return all possible letter combinations that the number could represent.
+ */
+ 
 public class Solution {
     public ArrayList<String> letterCombinations(String digits) {
         ArrayList<String> result = new ArrayList<String>();
