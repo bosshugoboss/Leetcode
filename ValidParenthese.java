@@ -7,8 +7,6 @@
  
 public class Solution {
     public boolean isValid(String s) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
         Stack<Character> stack = new Stack<Character>();
         for(int index = 0; index < s.length(); index ++){
             if(isLeft(s.charAt(index)))
