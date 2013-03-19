@@ -3,8 +3,6 @@
  */
 public class Solution {
     public ArrayList<String> generateParenthesis(int n) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
         return generate(n,n);
     }
     
