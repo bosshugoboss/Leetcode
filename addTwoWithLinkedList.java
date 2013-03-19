@@ -33,9 +33,9 @@ public class Solution {
                 thirdPointer.next = new ListNode(newValue);
                 thirdPointer = thirdPointer.next;            
             }
-            if(l1 != null)
+            if(l1 != null) // easy to ignore
             l1 = l1.next;
-            if(l2 != null)
+            if(l2 != null) // easy to ignore
             l2 = l2.next;
         }
         if(carry == 1){
