@@ -1,0 +1,4 @@
+SIGSTOP is a signal sent programmatically (eg: kill -STOP pid ) while 
+SIGTSTP is sent by a user typing on a keyboard, usually Control-Z.
+
+SIGSTOP cannot be ignored. SIGTSTP might be.
