@@ -1,25 +1,28 @@
 public class Solution {
-    public ListNode reverseKGroup(ListNode head, int k) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
+  public static ListNode reverseKGroup(ListNode head, int k) {       
         ListNode firstPointer = head;
         ListNode lastPointer = head;
         ListNode newHead = head;
+        ListNode tempHead = head;
         while(firstPointer != null){
            for(int index = 1; index < k; index ++){
-              if(lastPointer == null) return newHead;
               lastPointer = lastPointer.next;
-           }
-           if(firstPointer == head) newHead = lastPointer;
+              if(lastPointer == null) return newHead;
+           }           
+        if(firstPointer == head) newHead = lastPointer;
+        else tempHead.next = lastPointer;
            ListNode current = firstPointer;
            ListNode prev = lastPointer.next;
-           while(current != lastPointer.next){
+           ListNode nextPointer = prev;
+           while(current != nextPointer){              
               ListNode next = current.next;
               current.next = prev;
               prev = current;
-              current = next;              
+              current = next;                
            }
-           firstPointer = lastPointer.next;
+           tempHead = firstPointer;
+           firstPointer = nextPointer;          
+           lastPointer = firstPointer;
         }
         return newHead;
     }
