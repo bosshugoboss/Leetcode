@@ -1,3 +1,6 @@
+/**
+ *  Given two integers n and k, return all possible combinations of k numbers out of 1 ... n. 
+ */ 
 public class Solution {
     public ArrayList<ArrayList<Integer>> combine(int n, int k) {
            ArrayList<ArrayList<Integer>> result = combineRec(1, n, k);
