@@ -13,9 +13,29 @@ SIGSTOP cannot be ignored. SIGTSTP might be.
 3. SIGSTP -- stop all the processes in the foreground job;
    SIGINT -- terminate all the processes in the background job;
 
+   SIGKILL, SIGSTOP -- Cannot change their default manner
+
 
 
 
 
 pid_t getpgrp(void) -- return the group process id of the calling process.
+
 int setpgid(pid_t pid, pid_t gpid) -- setpgid(0,0)
+    return 0 on success, - 1 on error;
+
+int kill(pid_t pid, int sig) -- send signal to the process, if pid is negative, send to group;
+    return 0 on success, - 1 on error;
+
+unsigned int alarm(unsigned int secs);
+    returns: remaining secs of previous alarm, or 0 if no previous alarm.
+
+sighandler_t signal(int signum, sighandler_t handler);
+    if handler is SIG_IGN; then ignore the signal;
+    else if handler is SIG_DFL; then the action is reverted to default manner
+    else user define the action by writing handler function.
+
+
+
+Question: 
+  1. what if two different signals come simulataneously ?
