@@ -1,1 +1,4 @@
  
+int open(char *filename, int flags, mode_t mode);
+    return new file descriptor if OK, -1 if error;
+    flags - O_RDONLY; O_WRONLY; O_RDWR;
