@@ -1,3 +1,4 @@
 1. use git
 2. why final Class<? extends Servlet> servletClass;
 3. Jetty!
+4. Factory and Singleton !
