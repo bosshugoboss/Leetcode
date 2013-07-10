@@ -1,4 +1,3 @@
-
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
         // Start typing your Java solution below
