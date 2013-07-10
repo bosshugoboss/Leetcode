@@ -12,6 +12,7 @@ public class Solution {
                  largestIndex = mid;
              }
          }
+         if(largestIndex == -1) return 0;
          if(A[largestIndex] == target) return largestIndex;
          else return largestIndex + 1;
     }
