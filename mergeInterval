@@ -1,0 +1,27 @@
+public class Solution {
+      public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+        Collections.sort(intervals, new StartComparator());
+        ArrayList<Interval> result = new ArrayList<Interval>();
+  	    for(Interval inter : intervals){
+		     if(result.size() == 0) result.add(inter);
+		     else{
+			    Interval last = result.get(result.size() - 1);
+			    Interval newInter = null;
+			  	if(last.end >= inter.start){
+				   newInter = new Interval(last.start, Math.max(inter.end, last.end));
+				   result.remove(result.size() - 1);
+				   result.add(newInter);
+				}
+				else{
+				   result.add(inter);
+				}
+			 }
+		  }
+		  return result;
+    }
+	 class StartComparator implements Comparator<Interval>{
+	      public int compare(Interval first, Interval second){
+		         return first.start - second.start;
+		  }
+	}
+}
