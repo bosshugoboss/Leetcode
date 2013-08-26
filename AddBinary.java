@@ -49,3 +49,43 @@ public class Solution {
         return new String(result).substring(1,length); 
     }
 }
+
+
+new version:
+
+public class Solution {
+    public String addBinary(String k, String m) {
+        int carry = 0;
+        String a = (new StringBuilder(k)).reverse().toString();
+        String b = (new StringBuilder(m)).reverse().toString();
+        StringBuilder result = new StringBuilder();
+        int length = a.length() > b.length() ? a.length() : b.length();
+        int i = 0;
+        int minus = '0';
+        while(i < length){
+            int value = 0;
+            if(i < a.length() && i < b.length()){
+                value = carry + Integer.valueOf(a.charAt(i)) + Integer.valueOf(b.charAt(i)) - 2* minus;
+            }
+            else{
+                if(i >= a.length()){
+                 value = carry + Integer.valueOf(b.charAt(i)) - minus;
+                }
+                else{
+                 value = carry + Integer.valueOf(a.charAt(i)) - minus;
+                }
+            }
+            if(value >= 2) {
+                carry = 1;
+                result.append(value - 2);
+            }
+            else {
+                carry = 0;
+                result.append(value);
+            }
+            i++;
+        }
+        if(carry == 1) result.append(carry);
+        return new String(result.reverse());
+    }
+}
