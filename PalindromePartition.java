@@ -1,4 +1,5 @@
-public ArrayList<ArrayList<String>> partition(String s) {
+public class Solution {
+        public ArrayList<ArrayList<String>> partition(String s) {
 	        // Start typing your Java solution below
 	        // DO NOT write main() function
 	        boolean[][] isPal = new boolean[s.length()][s.length()];
@@ -14,7 +15,7 @@ public ArrayList<ArrayList<String>> partition(String s) {
 	        return partitionHelper(s, 0, isPal);
 	    }
 	    
-public ArrayList<ArrayList<String>> partitionHelper(String s, int start, boolean[][] isPal){
+	    public ArrayList<ArrayList<String>> partitionHelper(String s, int start, boolean[][] isPal){
 	        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 	        if(s.length() == start){
 	          ArrayList<String> array = new ArrayList<String>();
@@ -31,3 +32,4 @@ public ArrayList<ArrayList<String>> partitionHelper(String s, int start, boolean
 	        }
 	        return result;
 	    }
+}
