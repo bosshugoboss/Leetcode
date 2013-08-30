@@ -1,7 +1,8 @@
-public int minCut(String s){
+public class Solution {
+      public int minCut(String s){
 
-	    boolean[][] isPal = new boolean[s.length()][s.length()];
-	    int[] result = new int[s.length() + 1];
+        boolean[][] isPal = new boolean[s.length()][s.length()];
+        int[] result = new int[s.length() + 1];
 	    for(int i = 0; i < s.length(); i++){
 	        isPal[i][i] = true;
 	        if(i > 0) isPal[i-1][i] = s.charAt(i-1) == s.charAt(i);
@@ -20,5 +21,6 @@ public int minCut(String s){
 	            }
 	        }
 	    }
-	    return result[0];
+	    return result[0] - 1;
 	}
+}
