@@ -1,10 +1,12 @@
-public static int consecutive(int[] num){
+public class Solution {
+    public int longestConsecutive(int[] num) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
         int max = 0;
-		Set<Integer> nums = new HashSet<Integer>();
+    	Set<Integer> nums = new HashSet<Integer>();
         for(int i = 0; i < num.length; i++){
             nums.add(num[i]);
         }
-        System.out.println(nums);
         Set<Integer> newNums = new HashSet(nums);
         for(Integer i : nums){
         	if(newNums.contains(i)){
@@ -25,4 +27,5 @@ public static int consecutive(int[] num){
         	}
         }
         return max;
-	}
+    }
+}
