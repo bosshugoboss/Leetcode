@@ -18,7 +18,7 @@ public class Solution {
     }
     
     public void sumNumbersRec(TreeNode root, int prev){
-        if(root == null) return 0;
+        if(root == null) return;
         if(root.left == null && root.right == null){
             sum += prev * 10 + root.val;
         }
