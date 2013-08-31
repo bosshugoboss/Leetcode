@@ -1,4 +1,15 @@
-public int sumNumbers(TreeNode root) {
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public static int sum;
+    public int sumNumbers(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
         sum = 0;
@@ -7,6 +18,7 @@ public int sumNumbers(TreeNode root) {
     }
     
     public void sumNumbersRec(TreeNode root, int prev){
+        if(root == null) return 0;
         if(root.left == null && root.right == null){
             sum += prev * 10 + root.val;
         }
@@ -16,3 +28,4 @@ public int sumNumbers(TreeNode root) {
         }
         return; 
     }
+}
