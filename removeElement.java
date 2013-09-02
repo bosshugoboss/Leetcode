@@ -32,7 +32,37 @@ public class Solution {
          A[b] = temp;
     }
 }
+// My solution
 
+public class Solution {
+    public int removeElement(int[] A, int elem) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        int left = 0;
+        int right = A.length - 1;
+        int num = A.length;
+        while(right >= left){
+            if(A[left] == elem){
+                for(int i = right; i > left; i--){
+                    if(A[i] != elem) break;               
+                    right --;
+                    num --;
+                }
+                swap(A, left, right);
+                right --;
+                num --;             
+            }
+            left ++;
+        }
+        return num;
+    }
+    
+    private void swap(int[] A, int a, int b){
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+    }
+}
 
 // Best Solution
 
