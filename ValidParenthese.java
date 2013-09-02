@@ -32,3 +32,27 @@ public class Solution {
                || (first == '[' && second == ']');
     }
 }
+
+
+/* new */
+
+public class Solution {
+    public boolean isValid(String s) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        if(s.length() == 0) return true;
+        char left = s.charAt(0);
+        char right;
+        if(left == '(') right = ')';
+        else if(left == '[') right = ']';
+        else if (left == '{') right = '}';
+        else return false;
+        for(int i = s.length() - 1; i > 0; i --){
+            if(s.charAt(i) == right){
+              if(isValid(s.substring(1,i)) && isValid(s.substring(i+1,s.length())))
+              return true;
+            }
+        }
+        return false;
+    }
+}
