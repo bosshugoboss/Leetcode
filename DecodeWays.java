@@ -34,3 +34,25 @@ public class Solution {
          return solution[s.length() - 1];
      }
  }
+ 
+ 
+ /* implementation */
+ public class Solution {
+    public int numDecodings(String s) {
+        
+        int[ ] result = new int[s.length() + 1];
+        if(s.length() == 0) return 0;
+        if(s.charAt(0) == '0') return 0;
+        result[0] = 1;
+        result[1] = 1;
+        for(int i = 2 ; i <= s.length() ; i++){
+            int j = Integer.valueOf(s.substring(i-2,i));
+            if(s.charAt(i-1) == '0') result[i] = (j <= 26 && j >0 && s.charAt(i-2) != '0')? result[i-2] : 0;
+            else if(j <= 26 && j > 0 && s.charAt(i-2) != '0'){
+                result[i] = result[i-1] + result[i-2];
+            }
+            else result[i] = result[i-1];
+        }
+        return result[s.length()];
+    }
+}
