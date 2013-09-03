@@ -32,3 +32,56 @@ public class Solution {
         return newHead;
     }
 }
+
+
+/* new  and stupid*/
+
+ */
+public class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode head = null;
+        ListNode result = null;
+        ListNode head1 = l1;
+        ListNode head2 = l2;
+        if(l1 == null) return l2;
+        if(l2 == null) return l1;
+        while(head1 != null && head2 != null){
+            if(head1.val < head2.val){
+               if(head == null){
+                   head = new ListNode(head1.val);
+                   result = head;
+               }
+               else{
+                   head.next = new ListNode(head1.val);
+                   head = head.next;
+               }
+               head1 = head1.next;
+            }
+            else{
+                if(head == null){
+                    head = new ListNode(head2.val);
+                    result = head;
+                }else{
+                    head.next = new ListNode(head2.val);
+                    head = head.next;
+                }
+                head2 = head2.next;
+            }
+        }
+        if(head1 != null){
+            while(head1 != null){
+                head.next = new ListNode(head1.val);
+                head1 = head1.next;
+                head = head.next;
+            }
+        }
+        else{
+            while(head2 != null){
+                head.next = new ListNode(head2.val);
+                head2 = head2.next;
+                head = head.next;
+            }
+        }
+        return result;
+    }
+}
