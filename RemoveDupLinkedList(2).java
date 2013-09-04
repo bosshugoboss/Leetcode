@@ -43,3 +43,39 @@ public class Solution {
            return result;
     }
 }
+
+
+/* new */
+public class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        if(head == null) return null;
+        ListNode ahead = null;
+        ListNode current = head;
+        ListNode runner = head.next;
+        while(runner != null){
+             if(current.val == runner.val){
+                int temp = current.val;
+                while(runner != null && runner.val == temp){
+                    runner = runner.next;
+                }
+                if(current == head){
+                   head = runner;
+                   current = head;
+                } 
+                else{
+                   ahead.next = runner;
+                   current = runner;                   
+                }
+             }
+             else{
+                 ahead = current;
+                 current = current.next;
+             }
+             if(runner != null)
+             runner = runner.next;
+        }
+        return head;
+    }
+}
