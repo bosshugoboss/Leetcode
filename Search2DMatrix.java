@@ -39,3 +39,25 @@ public class Solution {
         return end;
     }
 }
+
+
+/* new */
+public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        int row = -2;
+        for(int i = 0; i < matrix.length; i++){
+            if(target < matrix[i][0]){
+                row = i - 1;
+                break;
+            }
+        }
+        if(row == -2) row = matrix.length - 1;
+        if(row == -1) return false;
+        for(int j = 0; j < matrix[row].length; j++){
+            if(matrix[row][j] == target) return true;
+        }
+        return false;
+    }
+}
