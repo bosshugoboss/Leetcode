@@ -28,8 +28,8 @@ public class Solution {
          int lastLevel = (int) Math.pow(2, log2(length)) - 1;
          int rest = length - lastLevel;
          int index = 0;
-         if(rest <= (lastLevel + 1)/2) index = length - leftLength;
-         else index = length - leftLength - rest + (lastLevel + 1)/2;
+         if(rest <= (lastLevel + 1)/2) index = end - leftLength;
+         else index = end - leftLength - rest + (lastLevel + 1)/2;
          root.val = num[index];
          if(index > start){
              root.right = new TreeNode(0);
