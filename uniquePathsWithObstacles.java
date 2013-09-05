@@ -5,7 +5,7 @@ public class Solution {
         int row = obstacleGrid.length;
         int column = obstacleGrid[0].length;
         int[][] result = new int[row][column];
-        result[0][0] = 1;
+        result[0][0] = obstacleGrid[0][0] == 0 ? 1 : 0;
         for(int i = 1; i < row; i ++){
             result[i][0] = (result[i-1][0] == 1  && obstacleGrid[i][0] == 0) ? 1 : 0; 
         }
