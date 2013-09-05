@@ -19,3 +19,18 @@ public class Solution {
         return count;
     }
 }
+
+/* new */
+public class Solution {
+    public int lengthOfLastWord(String s) {
+        int lastIndex = -1;
+        int lastLength = 0;
+        for(int i = 0 ; i <= s.length(); i ++){
+            if(i == s.length() || s.charAt(i) == ' '){
+                lastLength = i - lastIndex - 1 == 0? lastLength : i - lastIndex - 1;
+                lastIndex = i;
+            }
+        }
+        return lastLength;
+    }
+}
