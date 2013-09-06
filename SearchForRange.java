@@ -22,3 +22,30 @@ public class Solution {
        return largestIndex;
     }    
 }
+
+/*new */
+
+public class Solution {
+    public int[] searchRange(int[] A, int target) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        int[] result = {-1, -1};
+        if(search(A,target) != -1 && A[search(A,target)] == target){
+            result[0] = search(A,target - 1) + 1;
+            result[1] = search(A,target);
+        }
+        return result;
+    }
+    
+    private int search(int[] A, int target) {
+        int start = 0;
+        int end = A.length - 1;
+        int mid = 0;
+        while(start <= end){
+            mid = (start + end) / 2;
+            if(A[mid] <= target) start = mid + 1;
+            else end = mid - 1;
+        }     
+        return  A[mid] == target ? mid : mid - 1;
+    }
+}
