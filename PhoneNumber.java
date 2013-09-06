@@ -75,3 +75,40 @@ public class Solution {
               
     }
 }
+
+
+/* new */
+public class Solution {
+    public ArrayList<String> letterCombinations(String digits) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        Map<Integer, String> map = getPhoneMap();
+        ArrayList<String> r1 = new ArrayList<String>();
+        r1.add("");
+        for(int i = 0; i < digits.length(); i ++){
+            String temp = map.get(Integer.valueOf(digits.substring(i,i+1)));
+            ArrayList<String> r2 = new ArrayList<String>();
+            for(String str : r1){
+              for(int j = 0; j < temp.length(); j ++){
+                  StringBuilder temp1 = new StringBuilder(str);
+                  temp1.append(temp.charAt(j));
+                  r2.add(temp1.toString());
+              }
+            }
+            r1 = r2;
+        }
+        return r1;
+    }
+    private Map<Integer, String> getPhoneMap() {
+        Map<Integer, String> r1 = new HashMap<Integer, String>();
+        r1.put(2, "abc");
+        r1.put(3, "def");
+        r1.put(4, "ghi");
+        r1.put(5, "jkl");
+        r1.put(6, "mno");
+        r1.put(7, "pqrs");
+        r1.put(8, "tuv");
+        r1.put(9, "wxyz");
+        return r1;
+    }
+}
