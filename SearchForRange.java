@@ -24,7 +24,6 @@ public class Solution {
 }
 
 /*new */
-
 public class Solution {
     public int[] searchRange(int[] A, int target) {
         // Start typing your Java solution below
@@ -40,12 +39,16 @@ public class Solution {
     private int search(int[] A, int target) {
         int start = 0;
         int end = A.length - 1;
-        int mid = 0;
+        int result = -1;
+        
         while(start <= end){
-            mid = (start + end) / 2;
-            if(A[mid] <= target) start = mid + 1;
+            int mid = (start + end) / 2;
+            if(A[mid] <= target){
+                start = mid + 1;
+                result = mid;
+            }
             else end = mid - 1;
         }     
-        return  A[mid] == target ? mid : mid - 1;
+        return result;
     }
 }
