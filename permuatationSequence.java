@@ -12,7 +12,7 @@ public class Solution {
             int numOfGroup = num / count(list.size() - 1);
             str.append(list.get(numOfGroup));
             list.remove(numOfGroup);
-            num = num % count(list.size() - 1);
+            num = num % count(list.size());
         }
         return str.toString();
     }
