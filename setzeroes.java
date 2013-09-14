@@ -6,12 +6,11 @@ public class Solution {
         boolean firstRow = false;
         boolean firstColumn = false;
         for(int i = 0; i < matrix.length; i ++){
-            if(matrix[i][0] == 0) firstColumn = true;
-            matrix[i][0] == 2;
+            if(matrix[i][0] == 0)
+                firstColumn = true;
         }
         for(int j = 0; j < matrix[0].length; j ++){
             if(matrix[0][j] == 0) firstRow = true;
-            matrix[0][j] == 2;
         }
         for(int i = 1; i < matrix.length; i ++){
             for(int j = 1; j < matrix[0].length; j ++){
@@ -21,10 +20,29 @@ public class Solution {
                 }
             }
         }
-        for(int i = 0; i < matrix.length; i ++){
+        for(int i = 1; i < matrix.length; i ++){
             if(matrix[i][0] == 0){
-                for(int j
+                for(int j = 0; j < matrix[0].length; j ++){
+                    matrix[i][j] = 0;
+                }
             }
         }
+        for(int j = 1; j < matrix[0].length; j ++){
+            if(matrix[0][j] == 0){
+                for(int i = 0; i < matrix.length; i ++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        if(firstRow){
+            for(int i = 0; i < matrix[0].length; i ++){
+                matrix[0][i] = 0;
+            }
+        }
+        if(firstColumn){
+            for(int j = 0; j < matrix.length; j ++){
+                matrix[j][0] = 0;
+            }
+        } 
     }
 }
