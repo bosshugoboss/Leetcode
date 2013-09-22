@@ -3,3 +3,4 @@
 3. ConcatenationofAllWords.java(not good enough)
 4. rotate image
 5. cracking recursive 8.7
+6. cracking Java 14.2
