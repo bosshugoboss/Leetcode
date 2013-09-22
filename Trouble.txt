@@ -2,3 +2,4 @@
 2. searchForRange
 3. ConcatenationofAllWords.java(not good enough)
 4. rotate image
+5. cracking recursive 8.7
