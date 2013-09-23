@@ -5,3 +5,4 @@
 5. cracking recursive 8.7
 6. cracking Java 14.2
 7. cracking Moderate 19.10
+8. KMP algorithm
