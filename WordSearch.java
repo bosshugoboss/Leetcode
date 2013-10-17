@@ -136,3 +136,39 @@ public class Solution {
     }
 }
 
+
+/* really new */
+
+public class Solution {
+    public boolean exist(char[][] board, String word) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        HashSet<Integer> visited = new HashSet<Integer>();
+        for(int i = 0; i < board.length; i ++){
+            for(int j = 0; j < board[0].length; j ++){
+                visited.clear();
+                if(DFS(visited, board, i, j, 0, word)) return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean DFS(HashSet<Integer> visited, char[][] board, int row, int column, int start, String word){
+        if(board[row][column] != word.charAt(start)) return false;
+        else if(start == word.length() - 1) return true;
+        visited.add(row * board[0].length + column);
+        if(row - 1 >= 0 && !visited.contains((row - 1)* board[0].length + column)){
+            if(DFS(visited, board, row - 1, column, start + 1, word)) return true;
+        }
+        if(row + 1 < board.length && !visited.contains((row + 1) * board[0].length + column)){
+            if(DFS(visited, board, row + 1, column, start + 1, word)) return true;
+        }
+        if(column - 1 >= 0 && !visited.contains(row * board[0].length + column - 1)){
+            if(DFS(visited, board, row, column - 1, start + 1, word)) return true;
+        }
+        if(column + 1 < board[0].length && !visited.contains(row * board[0].length + column + 1)){
+            if(DFS(visited, board, row, column + 1, start + 1, word)) return true;
+        }
+        visited.remove(row * board[0].length + column);
+        return false;
+    }
+}
