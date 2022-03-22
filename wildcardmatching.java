@@ -31,6 +31,7 @@ public class Solution {
                 else resultTable[row][column] = false;
             }
         }
+        // Test blame function
         return resultTable[p.length()][s.length()];
     }
 }
